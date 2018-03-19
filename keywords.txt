@@ -1,7 +1,8 @@
 # Datatypes (KEYWORD1)
 Timer	KEYWORD1
+Thread	KEYWORD1
 
 # Methods and Functions (KEYWORD2)
-start	KEYWORD2
-stop	KEYWORD2
-update	KEYWORD2
+enable	KEYWORD2
+disable	KEYWORD2
+execute	KEYWORD2
