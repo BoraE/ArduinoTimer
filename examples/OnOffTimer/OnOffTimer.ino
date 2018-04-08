@@ -1,9 +1,8 @@
 /*
- * Turn the on-board LED on for 1s and turn it off for 2s, then repeat.
+ * Turn the on-board LED on for 1s and off for 2s, then repeat.
  */
 
-// Author(s): Bora Eryilmaz
-// Copyright 2018
+// Copyright (c) 2018 Bora Eryilmaz
 
 #include <Timer.h>
 
@@ -17,12 +16,11 @@ Timer timer {1000ul, 2000ul, on_off_fcn};
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
-  timer.enable();
 }
 
 void loop() {
-  // on_off_fcn() will at each on and off transition
-  timer.execute();
+  // on_off_fcn() will run at each on and off transition
+  timer.update();
 
   // Your other code here
 }
