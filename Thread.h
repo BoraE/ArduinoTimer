@@ -1,4 +1,4 @@
-// Copyright (c) 2018 Bora Eryilmaz
+// Copyright (c) 2018-2019 Bora Eryilmaz
 
 #ifndef _THREAD_H
 #define _THREAD_H
@@ -16,8 +16,8 @@ public:
   void update();
 
 private:
-  unsigned long _sample_time; // sample time in ms
-  unsigned long _previous_time { 0ul }; // previous update time in ms
+  unsigned long _sample_time; // sample time in microseconds
+  unsigned long _previous_time { 0ul }; // previous update time in microseconds
   bool _enabled { true };
   FCN _fcn;
 };
