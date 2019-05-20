@@ -3,13 +3,8 @@
 #include <Arduino.h>
 #include <Thread.h>
 
-Thread::Thread(unsigned long sample_time, FCN fcn)
-  : _sample_time(sample_time), _fcn(fcn) {
-  _previous_time = micros();
-}
-
 void Thread::update() {
-  unsigned long current_time = micros();
+  unsigned long current_time = get_current_time();
   unsigned long delta = current_time - _previous_time;
 
   if (delta >= _sample_time) {
@@ -19,4 +14,22 @@ void Thread::update() {
       _fcn();
     }
   }
+}
+
+MillisecondThread::MillisecondThread(unsigned long sample_time, FCN fcn)
+  : Thread{sample_time, fcn} {
+  _previous_time = get_current_time();
+}
+
+unsigned long MillisecondThread::get_current_time() {
+  return millis();
+}
+
+MicrosecondThread::MicrosecondThread(unsigned long sample_time, FCN fcn)
+  : Thread{sample_time, fcn}{
+  _previous_time = get_current_time();
+}
+
+unsigned long MicrosecondThread::get_current_time() {
+  return micros();
 }
