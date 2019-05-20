@@ -1,10 +1,10 @@
-// Copyright (c) 2018 Bora Eryilmaz
+// Copyright (c) 2018-2019 Bora Eryilmaz
 
 #ifndef _TIMER_H
 #define _TIMER_H
 
 class Timer {
-  using FCN = void (*)(bool); // current state is the input argument
+  using FCN = void (*)(bool); // Current state is the input argument
 
 public:
   Timer(unsigned long on_time, unsigned long off_time, FCN fcn);

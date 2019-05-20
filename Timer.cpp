@@ -1,4 +1,4 @@
-// Copyright (c) 2018 Bora Eryilmaz
+// Copyright (c) 2018-2019 Bora Eryilmaz
 
 #include <Arduino.h>
 #include <Timer.h>
