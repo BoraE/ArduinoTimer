@@ -26,7 +26,7 @@ unsigned long MillisecondThread::get_current_time() {
 }
 
 MicrosecondThread::MicrosecondThread(unsigned long sample_time, FCN fcn)
-  : Thread{sample_time, fcn}{
+  : Thread{sample_time, fcn} {
   _previous_time = get_current_time();
 }
 
